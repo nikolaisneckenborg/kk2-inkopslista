@@ -83,7 +83,7 @@ class ShoppingList
     {
         try{
         string text = File.ReadAllText(path);
-        string[] lines = text.Split('\n');
+        string[] lines = text.Trim().Split('\n');
         foreach (string line in lines)
         {
             string[] parts = line.Trim().Split(';');
