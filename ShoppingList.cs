@@ -86,7 +86,7 @@ class ShoppingList
         string[] lines = text.Split('\n');
         foreach (string line in lines)
         {
-            string[] parts = line.Split(';');
+            string[] parts = line.Trim().Split(';');
             items.Add(new Item(parts[1], int.Parse(parts[0])));
         }
         }
