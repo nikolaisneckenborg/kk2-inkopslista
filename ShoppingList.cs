@@ -95,4 +95,8 @@ class ShoppingList
             Console.WriteLine(e.Message);
         }
     }
+    public int Count()
+    {
+        return items.Count;
+    }
 }

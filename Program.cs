@@ -30,7 +30,7 @@ while (true)
         int number;
         while(!(int.TryParse(priceInput, out number)) | number<1)
         {
-            Console.Write("Ange ett positivt heltal: ");
+            Console.Write("Ange ett positivt heltal:");
             priceInput = Console.ReadLine()!;
         }
         
@@ -39,7 +39,13 @@ while (true)
     else if (choice == 2)
     {
         Console.Write("Nummer: ");
-        int number = int.Parse(Console.ReadLine());
+        string input = Console.ReadLine();
+        int number;
+        while(!(int.TryParse(input, out number)) | number<1 | number>list.Count())
+        {
+            Console.Write("Ange en giltig vara: ");
+            input = Console.ReadLine()!;
+        }
         list.RemoveAt(number);
     }
     else if (choice == 3)
