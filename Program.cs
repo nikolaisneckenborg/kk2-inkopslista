@@ -17,11 +17,25 @@ while (true)
 
     if (choice == 1)
     {
+        
         Console.Write("Namn: ");
-        string name = Console.ReadLine();
+        string nameInput = Console.ReadLine();
+        while(string.IsNullOrWhiteSpace(nameInput))
+        {
+            Console.Write("Skriv ett giltigt Namn: ");
+            nameInput = Console.ReadLine();
+        }
         Console.Write("Pris: ");
-        int price = int.Parse(Console.ReadLine());
-        list.Add(new Item(name, price));
+        string priceInput = Console.ReadLine()!;
+        if(!(int.TryParse(priceInput, out int nummer)) | nummer<1)
+        {
+            Console.WriteLine("Ogiltigt pris");
+            Console.ReadKey();
+        }
+        else
+        {
+        list.Add(new Item(nameInput, nummer));
+        }  
     }
     else if (choice == 2)
     {
