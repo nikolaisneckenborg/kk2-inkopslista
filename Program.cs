@@ -1,5 +1,19 @@
 ShoppingList list = new ShoppingList("items.txt");
 list.Load();
+list.SetBudget(Budget());
+
+int Budget()
+{
+    Console.Write("Ange din budget för shoppinglistan: ");
+    string input = Console.ReadLine();
+    int budget;
+    while (!int.TryParse(input, out budget) || budget < 0)
+    {
+        Console.Write("Ange ett positivt heltal för budgetten: ");
+        input = Console.ReadLine();
+    }
+    return budget;
+}
 
 while (true)
 {

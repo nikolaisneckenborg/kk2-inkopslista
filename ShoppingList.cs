@@ -3,6 +3,7 @@ class ShoppingList
 {
     private List<Item> items = new List<Item>();
     private string path;
+    private int budget = 0;
 
     public ShoppingList(string path)
     {
@@ -55,6 +56,7 @@ class ShoppingList
         }
 
         Console.WriteLine($"Totalt: {Total()} kr");
+        Console.WriteLine($"Du har {budget} kr kvar i din budget.");
     }
 
     // Writes one item per line, as "price;name".
@@ -102,5 +104,17 @@ class ShoppingList
     public int Count()
     {
         return items.Count;
+    }
+    public void SetBudget(int budgetInput)
+    {
+        if (budgetInput < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(budgetInput), "Budgeten får inte vara negativ");
+        }
+        budget = budgetInput;
+    }
+    public int RemainingBudget()
+    {
+        return budget - Total();
     }
 }
