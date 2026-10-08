@@ -59,12 +59,12 @@ Startkoden innehöll sex fel: fyra som fick programmet att krascha, ett som gav 
 
 ## Designval till Add metoden
 
-     - Add returnerar false i stället för att kasta ett undantag.
-     - Varför: att gå över budgeten är en förväntad situation, inte ett fel
-     - Item kastar undantag eftersom en ogiltig vara är ett fel.
-     - Vad Program.cs gör med svaret: kontrollerar bool-värdet och visar ett meddelande.
+- Add returnerar false i stället för att kasta ett undantag.
+- Varför: att gå över budgeten är en förväntad situation, inte ett fel
+- Item kastar undantag eftersom en ogiltig vara är ett fel.
+- Vad Program.cs gör med svaret: kontrollerar bool-värdet och visar ett meddelande.
 
-     ## Klassdiagram
+## Klassdiagram
 
 ```mermaid
 classDiagram
