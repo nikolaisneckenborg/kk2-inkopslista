@@ -59,7 +59,22 @@ while (true)
                 Console.Write("Ange ett positivt heltal:");
                 priceInput = Console.ReadLine()!;
             }
-        list.Add(new Item(nameInput, number));
+            try
+            {
+                Item item = new Item(nameInput, number);
+                if (list.Add(item))
+                {
+                    Console.WriteLine($"{item.Name} lades till.");
+                }
+                else
+                {
+                    Console.WriteLine($"{item.Name} kostar {item.Price} kr men du har bara {list.RemainingBudget()} kr kvar. Varan lades inte till.");
+                }
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine($"Ogiltig vara: {e.Message}");
+            }
         }
     }
     else if (choice == 2)
