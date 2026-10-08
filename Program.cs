@@ -27,15 +27,14 @@ while (true)
         }
         Console.Write("Pris: ");
         string priceInput = Console.ReadLine()!;
-        if(!(int.TryParse(priceInput, out int nummer)) | nummer<1)
+        int number;
+        while(!(int.TryParse(priceInput, out number)) | number<1)
         {
-            Console.WriteLine("Ogiltigt pris");
-            Console.ReadKey();
+            Console.Write("Ange ett positivt heltal: ");
+            priceInput = Console.ReadLine()!;
         }
-        else
-        {
-        list.Add(new Item(nameInput, nummer));
-        }  
+        
+        list.Add(new Item(nameInput, number));
     }
     else if (choice == 2)
     {
