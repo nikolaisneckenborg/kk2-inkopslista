@@ -63,3 +63,41 @@ Startkoden innehöll sex fel: fyra som fick programmet att krascha, ett som gav 
      - Varför: att gå över budgeten är en förväntad situation, inte ett fel
      - Item kastar undantag eftersom en ogiltig vara är ett fel.
      - Vad Program.cs gör med svaret: kontrollerar bool-värdet och visar ett meddelande.
+
+     ## Klassdiagram
+
+```mermaid
+classDiagram
+    class Program {
+        Budget() int
+    }
+
+    class ShoppingList {
+        -List~Item~ items
+        -string path
+        -int budget
+        +ShoppingList(string path)
+        +Add(Item item) bool
+        +RemoveAt(int number) void
+        +Total() int
+        +Find(string name) Item
+        +Print() void
+        +Save() void
+        +Load() void
+        +Count() int
+        +SetBudget(int budgetInput) void
+        +RemainingBudget() int
+    }
+
+    class Item {
+        -string _name
+        -int _price
+        +string Name
+        +int Price
+        +Item(string name, int price)
+        +ToString() string
+    }
+
+    Program --> ShoppingList : använder
+    ShoppingList "1" --> "0..*" Item : innehåller
+```
