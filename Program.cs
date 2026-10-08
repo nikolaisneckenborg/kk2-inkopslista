@@ -31,16 +31,22 @@ while (true)
             Console.Write("Skriv ett giltigt Namn: ");
             nameInput = Console.ReadLine();
         }
-        Console.Write("Pris: ");
-        string priceInput = Console.ReadLine()!;
-        int number;
-        while(!(int.TryParse(priceInput, out number)) | number<1)
+        if(list.Find(nameInput) != null)
         {
-            Console.Write("Ange ett positivt heltal:");
-            priceInput = Console.ReadLine()!;
+            Console.WriteLine("Varan finns redan i listan.");
         }
-        
+        else
+        {
+            Console.Write("Pris: ");
+            string priceInput = Console.ReadLine()!;
+            int number;
+            while(!(int.TryParse(priceInput, out number)) | number<1)
+            {
+                Console.Write("Ange ett positivt heltal:");
+                priceInput = Console.ReadLine()!;
+            }
         list.Add(new Item(nameInput, number));
+        }
     }
     else if (choice == 2)
     {
