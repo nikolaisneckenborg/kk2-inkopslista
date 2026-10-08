@@ -56,7 +56,7 @@ class ShoppingList
         }
 
         Console.WriteLine($"Totalt: {Total()} kr");
-        Console.WriteLine($"Du har {budget} kr kvar i din budget.");
+        Console.WriteLine($"Du har {RemainingBudget()} kr kvar i din budget.");
     }
 
     // Writes one item per line, as "price;name".
