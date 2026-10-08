@@ -90,9 +90,9 @@ class ShoppingList
             items.Add(new Item(parts[1], int.Parse(parts[0])));
         }
         }
-        catch(Exception e)
+        catch(FileNotFoundException e)
         {
-            Console.WriteLine(e.Message);
+            Console.WriteLine($"Filen kunde inte hittas:{e.Message}");
         }
     }
     public int Count()
