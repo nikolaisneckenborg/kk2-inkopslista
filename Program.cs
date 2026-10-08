@@ -13,7 +13,13 @@ while (true)
     Console.WriteLine("5. Avsluta");
     Console.Write("Välj: ");
 
-    int choice = int.Parse(Console.ReadLine());
+    string menuchoice = Console.ReadLine();
+    int choice;
+    while(!(int.TryParse(menuchoice, out choice)) | choice<1 | choice>5)
+        {
+            Console.Write("Ange ett giltigt menyval: ");
+            menuchoice = Console.ReadLine()!;
+        }
 
     if (choice == 1)
     {
