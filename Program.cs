@@ -26,7 +26,7 @@ int MainMenu()
     }
     return choice;
 }
-void addItem()
+void AddItem()
 {
     Console.Write("Namn: ");
     string nameInput = Console.ReadLine();
@@ -67,7 +67,7 @@ void addItem()
         }
     } 
 }
-void removeItem()
+void RemoveItem()
 {
     if (list.Count() == 0)
     {
@@ -86,7 +86,7 @@ void removeItem()
         list.RemoveAt(number);
     }
 }
-void searchItem()
+void SearchItem()
 {
     Console.Write("Namn att söka efter: ");
     string wanted = Console.ReadLine();
@@ -116,16 +116,16 @@ while (true)
     switch (MainMenu())
     {
         case 1:
-            addItem();
+            AddItem();
             break;
         case 2:
-            removeItem();
+            RemoveItem();
             break;
         case 3:
             list.Save();
             break;
         case 4:
-            searchItem();
+            SearchItem();
             break;
         case 5:
             return;
