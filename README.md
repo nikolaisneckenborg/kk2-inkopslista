@@ -57,12 +57,12 @@ Startkoden innehöll sex fel: fyra som fick programmet att krascha, ett som gav 
 - Man kan inte ange ett tomt varunamn.
 - Samma vara kan inte läggas till två gånger. `Program.cs` kontrollerar med `Find` om varan redan finns.
 
-## Designval till Add metoden
+## Designval för Add-metoden
 
-- Add returnerar false i stället för att kasta ett undantag.
-- Varför: att gå över budgeten är en förväntad situation, inte ett fel
-- Item kastar undantag eftersom en ogiltig vara är ett fel.
-- Vad Program.cs gör med svaret: kontrollerar bool-värdet och visar ett meddelande.
+- `Add` returnerar `false` i stället för att kasta ett undantag.
+- Varför: att gå över budgeten är en förväntad situation, inte ett fel.
+- `Item` kastar undantag, eftersom en ogiltig vara är ett fel.
+- Vad `Program.cs` gör med svaret: kontrollerar bool-värdet och visar ett meddelande.
 
 ## Klassdiagram
 
@@ -70,6 +70,10 @@ Startkoden innehöll sex fel: fyra som fick programmet att krascha, ett som gav 
 classDiagram
     class Program {
         Budget() int
+        MainMenu() int
+        AddItem() void
+        RemoveItem() void
+        SearchItem() void
     }
 
     class ShoppingList {
