@@ -29,7 +29,7 @@ while (true)
 
     string menuchoice = Console.ReadLine();
     int choice;
-    while (!(int.TryParse(menuchoice, out choice)) | choice < 1 | choice > 5)
+    while (!int.TryParse(menuchoice, out choice) | choice < 1 | choice > 5)
     {
         Console.Write("Ange ett giltigt menyval: ");
         menuchoice = Console.ReadLine()!;
@@ -54,7 +54,7 @@ while (true)
             Console.Write("Pris: ");
             string priceInput = Console.ReadLine()!;
             int number;
-            while (!(int.TryParse(priceInput, out number)) | number < 1)
+            while (!int.TryParse(priceInput, out number) | number < 1)
             {
                 Console.Write("Ange ett positivt heltal:");
                 priceInput = Console.ReadLine()!;
@@ -88,7 +88,7 @@ while (true)
             Console.Write("Nummer: ");
             string input = Console.ReadLine();
             int number;
-            while (!(int.TryParse(input, out number)) | number < 1 | number > list.Count())
+            while (!int.TryParse(input, out number) | number < 1 | number > list.Count())
             {
                 Console.Write("Ange en giltig vara: ");
                 input = Console.ReadLine()!;
