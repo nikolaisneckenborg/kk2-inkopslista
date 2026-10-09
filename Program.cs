@@ -128,6 +128,6 @@ while (true)
             searchItem();
             break;
         case 5:
-            break;
+            return;
     }
 }
